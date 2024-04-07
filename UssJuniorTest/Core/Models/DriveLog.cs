@@ -25,4 +25,6 @@ public class DriveLog : Model
     /// Конец вождения.
     /// </summary>
     public DateTime EndDateTime { get; set; }
+
+    public TimeSpan Duration => EndDateTime - StartDateTime;
 }

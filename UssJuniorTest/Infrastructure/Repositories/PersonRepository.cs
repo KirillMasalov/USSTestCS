@@ -17,13 +17,13 @@ public sealed class PersonRepository : IRepository<Person>
     }
 
     /// <inheritdoc />
-    public Person? Get(long id)
+    public async Task<Person?> Get(long id)
     {
         return _store.GetAllPersons().FirstOrDefault(x => x.Id == id);
     }
 
     /// <inheritdoc />
-    public IEnumerable<Person> GetAll()
+    public async Task<IEnumerable<Person>> GetAll()
     {
         return _store.GetAllPersons();
     }
