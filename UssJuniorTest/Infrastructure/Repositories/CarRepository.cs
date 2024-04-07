@@ -17,13 +17,13 @@ public sealed class CarRepository : IRepository<Car>
     }
 
     /// <inheritdoc />
-    public Car? Get(long id)
+    public async Task<Car?> Get(long id)
     {
         return _store.GetAllCars().FirstOrDefault(x => x.Id == id);
     }
 
     /// <inheritdoc />
-    public IEnumerable<Car> GetAll()
+    public async Task<IEnumerable<Car>> GetAll()
     {
         return _store.GetAllCars();
     }
